@@ -23,10 +23,10 @@ const calculateTotal = compose(
 
 // construct message
 const formatTotal = price => price.toFixed(2);
-const createMessage = price => `You're total is $${price}`;
+const createText = price => `You're total is $${price}`;
 
 const constructMessage = compose(
-  createMessage,
+  createText,
   formatTotal
 );
 
