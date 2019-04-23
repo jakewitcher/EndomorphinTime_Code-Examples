@@ -3,18 +3,18 @@ const { MaybeNumber } = require("../utils/monads");
 
 // calculate total
 const applyPromotion = price => price * 0.7;
-const applylSalesTax = price => price * 1.065;
+const applySalesTax = price => price * 1.065;
 const applyShipping = price => price + 4.99;
 
 const calculateTotal = compose(
   applyShipping,
-  applylSalesTax,
+  applySalesTax,
   applyPromotion
 );
 
 // construct message
 const formatTotal = price => price.toFixed(2);
-const createText = price => `You're total is $${price}`;
+const createText = price => `Your total is $${price}`;
 
 const constructMessage = compose(
   createText,

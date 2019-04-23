@@ -17,13 +17,13 @@ function _applySalesTax(zipcode, price) {
 // a -> m b
 const calculateTotal = compose(
   map(applyShipping),
-  applySalesTax(45240),
+  applySalesTax(undefined),
   applyPromotion
 );
 
 // construct message
 const formatTotal = price => price.toFixed(2);
-const createText = price => `You're total is $${price}`;
+const createText = price => `Your total is $${price}`;
 
 const constructMessage = compose(
   createText,
